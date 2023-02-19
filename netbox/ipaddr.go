@@ -2,6 +2,7 @@ package netbox
 
 import (
 	"net/netip"
+	"reflect"
 
 	"github.com/netbox-community/go-netbox/netbox/client"
 	"github.com/netbox-community/go-netbox/netbox/client/ipam"
@@ -74,6 +75,13 @@ func ipamAddressToIPAddr(i *models.IPAddress) (*IPAddr, error) {
 	}
 	for _, t := range i.Tags {
 		ip.Tags[*t.Name] = true
+	}
+
+	v := reflect.ValueOf(i.CustomFields)
+	if v.Kind() == reflect.Map {
+		for _, key := range v.MapKeys() {
+			ip.CustomFields[key.String()] = v.MapIndex(key)
+		}
 	}
 
 	return ip, nil
