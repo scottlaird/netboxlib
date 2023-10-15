@@ -3,9 +3,9 @@ package netbox
 import (
 	"net/netip"
 
-	"github.com/netbox-community/go-netbox/netbox/v3/client"
-	"github.com/netbox-community/go-netbox/netbox/v3/client/ipam"
-	"github.com/netbox-community/go-netbox/netbox/v3/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/client"
+	"github.com/netbox-community/go-netbox/v3/netbox/client/ipam"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 type IPPrefix struct {
