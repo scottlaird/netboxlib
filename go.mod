@@ -2,7 +2,7 @@ module github.com/scottlaird/netboxlib
 
 go 1.18
 
-require github.com/netbox-community/go-netbox v0.0.0-20221114202533-18aea9a4ac2c
+require github.com/netbox-community/go-netbox v0.0.0-20230225105939-fe852c86b3d6
 
 require (
 	github.com/PuerkitoBio/purell v1.1.1 // indirect

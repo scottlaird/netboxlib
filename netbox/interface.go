@@ -3,9 +3,9 @@ package netbox
 import (
 	"fmt"
 
-	"github.com/netbox-community/go-netbox/netbox/client"
-	"github.com/netbox-community/go-netbox/netbox/client/dcim"
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/client"
+	"github.com/netbox-community/go-netbox/v3/netbox/client/dcim"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // Extracted from netbox/models/device's Interface, but reduced to
