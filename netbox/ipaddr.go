@@ -1,6 +1,7 @@
 package netbox
 
 import (
+	"fmt"
 	"net/netip"
 	"reflect"
 
@@ -88,8 +89,7 @@ func ipamAddressToIPAddr(i *models.IPAddress) (*IPAddr, error) {
 }
 
 func ListIPAddrs(c *client.NetBoxAPI) (IPAddrs, error) {
-	var limit int64
-	limit = 0
+	limit := int64(0)
 
 	r := ipam.NewIpamIPAddressesListParams()
 	r.Limit = &limit
@@ -113,9 +113,8 @@ func ListIPAddrs(c *client.NetBoxAPI) (IPAddrs, error) {
 }
 
 func GetIPAddr(c *client.NetBoxAPI, id int64) (*IPAddr, error) {
-	var limit int64
-	limit = 0
-	idStr := string(id)
+	limit := int64(0)
+	idStr := fmt.Sprint(id)
 
 	r := ipam.NewIpamIPAddressesListParams()
 	r.Limit = &limit
