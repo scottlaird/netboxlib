@@ -141,8 +141,7 @@ func dcimInterfaceToInterface(i *models.Interface) (*Interface, error) {
 }
 
 func ListInterfaces(c *client.NetBoxAPI) (Interfaces, error) {
-	var limit int64
-	limit = 0
+	limit := int64(0)
 
 	r := dcim.NewDcimInterfacesListParams()
 	r.Limit = &limit
@@ -166,9 +165,8 @@ func ListInterfaces(c *client.NetBoxAPI) (Interfaces, error) {
 }
 
 func GetInterface(c *client.NetBoxAPI, id int64) (*Interface, error) {
-	var limit int64
-	limit = 0
-	idStr := string(id)
+	limit := int64(0)
+	idStr := fmt.Sprint(id)
 
 	r := dcim.NewDcimInterfacesListParams()
 	r.Limit = &limit

@@ -1,6 +1,7 @@
 package netbox
 
 import (
+	"fmt"
 	"net/netip"
 
 	"github.com/netbox-community/go-netbox/v3/netbox/client"
@@ -81,8 +82,7 @@ func dcimDeviceToDevice(dev *models.DeviceWithConfigContext) (*Device, error) {
 }
 
 func ListDevices(c *client.NetBoxAPI) (Devices, error) {
-	var limit int64
-	limit = 0
+	limit := int64(0)
 
 	r := dcim.NewDcimDevicesListParams()
 	r.Limit = &limit
@@ -106,9 +106,8 @@ func ListDevices(c *client.NetBoxAPI) (Devices, error) {
 }
 
 func GetDevice(c *client.NetBoxAPI, id int64) (*Device, error) {
-	var limit int64
-	limit = 0
-	idStr := string(id)
+	limit := int64(0)
+	idStr := fmt.Sprint(id)
 
 	r := dcim.NewDcimDevicesListParams()
 	r.Limit = &limit
