@@ -14,7 +14,7 @@ import (
 // Go types to make it easier to work with the subset that I care
 // about.
 type IPAddr struct {
-	CustomFields       map[string]interface{}
+	CustomFields       map[string]reflect.Value
 	Address            netip.Prefix
 	AssignedObjectID   int64
 	AssignedObjectType string
@@ -45,7 +45,7 @@ func (ips IPAddrs) ForInterfaceID(id int64) IPAddrs {
 
 func ipamAddressToIPAddr(i *models.IPAddress) (*IPAddr, error) {
 	ip := &IPAddr{
-		CustomFields:       make(map[string]interface{}),
+		CustomFields:       make(map[string]reflect.Value),
 		AssignedObjectID:   Int64(i.AssignedObjectID),
 		AssignedObjectType: String(i.AssignedObjectType),
 		Description:        i.Description,
