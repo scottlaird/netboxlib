@@ -11,28 +11,27 @@ import (
 )
 
 type IPRange struct {
-	CustomFields       map[string]reflect.Value
-	StartAddress            netip.Prefix
-	EndAddress netip.Prefix
-	Description        string
-	Display            string
-	Family             string
-	ID                 int64
-	Status             string
-	Tags               map[string]bool // Tags.Name -> true
-	VRF                string
+	CustomFields map[string]reflect.Value
+	StartAddress netip.Prefix
+	EndAddress   netip.Prefix
+	Description  string
+	Display      string
+	Family       string
+	ID           int64
+	Status       string
+	Tags         map[string]bool // Tags.Name -> true
+	VRF          string
 }
 
 type IPRanges []*IPRange
 
-
 func ipamRangeToIPRange(i *models.IPRange) (*IPRange, error) {
 	r := &IPRange{
-		CustomFields:       make(map[string]reflect.Value),
-		Description:        i.Description,
-		Display:            i.Display,
-		ID:                 i.ID,
-		Tags:               make(map[string]bool),
+		CustomFields: make(map[string]reflect.Value),
+		Description:  i.Description,
+		Display:      i.Display,
+		ID:           i.ID,
+		Tags:         make(map[string]bool),
 	}
 
 	if i.StartAddress != nil {
