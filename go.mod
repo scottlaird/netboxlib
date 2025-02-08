@@ -25,7 +25,7 @@ require (
 	github.com/oklog/ulid v1.3.1 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	go.mongodb.org/mongo-driver v1.8.3 // indirect
-	golang.org/x/net v0.17.0 // indirect
-	golang.org/x/text v0.13.0 // indirect
+	golang.org/x/net v0.33.0 // indirect
+	golang.org/x/text v0.21.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
